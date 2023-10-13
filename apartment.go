@@ -88,7 +88,7 @@ func describeApartment(apartment Apartment, family Family) {
 		fmt.Println("- ", member.Name)
 	}
 
-	fmt.Println("\nДомашний питомец:")
+	fmt.Println("\nДомашние питомцы:")
 	for _, pet := range family.Pets {
 		fmt.Println("- ", pet)
 	}
