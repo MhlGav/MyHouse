@@ -15,16 +15,7 @@ type Apartment struct {
 	Rooms  []Room
 }
 
-type FamilyMember struct {
-	Name string
-}
-
-type Family struct {
-	Members []FamilyMember
-	Pets    []string
-}
-
-func main() {
+func Forrooms() []Room {
 	bedroom := Room{
 		Name:      "Спальня",
 		Area:      15.0,
@@ -51,25 +42,11 @@ func main() {
 		Height: 3.0,
 		Rooms:  []Room{bedroom, livingRoom, kitchen},
 	}
-
-	familyMembers := []FamilyMember{
-		{Name: "Папа"},
-		{Name: "Мама"},
-		{Name: "Я"},
-		{Name: "Сестра"},
-	}
-
-	pets := []string{"Йоркширский терьер"}
-
-	family := Family{
-		Members: familyMembers,
-		Pets:    pets,
-	}
-
-	describeApartment(apartment, family)
+	describeApartment(apartment)
+	return []Room{bedroom, livingRoom, kitchen}
 }
 
-func describeApartment(apartment Apartment, family Family) {
+func describeApartment(apartment Apartment) {
 	fmt.Println("Описание квартиры:")
 	fmt.Printf("- Площадь: %.1f квадратных метров\n", apartment.Area)
 	fmt.Printf("- Высота потолков: %.1f метров\n", apartment.Height)
@@ -81,15 +58,5 @@ func describeApartment(apartment Apartment, family Family) {
 		for _, furniture := range room.Furniture {
 			fmt.Printf("  - %s\n", furniture)
 		}
-	}
-
-	fmt.Println("\nСемья:")
-	for _, member := range family.Members {
-		fmt.Println("- ", member.Name)
-	}
-
-	fmt.Println("\nДомашние питомцы:")
-	for _, pet := range family.Pets {
-		fmt.Println("- ", pet)
 	}
 }
