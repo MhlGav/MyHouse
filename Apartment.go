@@ -15,7 +15,7 @@ type Apartment struct {
 	Rooms  []Room
 }
 
-func Forrooms() []Room {
+func ForRooms() []Room {
 	bedroom := Room{
 		Name:      "Спальня",
 		Area:      15.0,

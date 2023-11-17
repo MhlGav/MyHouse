@@ -11,7 +11,7 @@ type Family struct {
 	Pets    []string
 }
 
-func Forfamilymembers() {
+func ForFamilyMembers() {
 	familyMembers := []FamilyMember{
 		{Name: "Папа"},
 		{Name: "Мама"},
